@@ -18,7 +18,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 **NOTE: the installer will rename an existing `.zshrc` file to `.zshrc.pre-oh-my-zsh`.**
 
 ## 🎨 Theme Installation
+
 ### Powerlevel10k
+
 [Powerlevel10k](https://github.com/romkatv/powerlevel10k) is the most versatile theme on market which can be rich and minimalistic at the same time. To install it use below command
 
 1. Clone the repository:
@@ -36,21 +38,30 @@ To configure `Powelevel10K`, type `p10k configure`
 ![Alt Text](https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif)
 
 ### Starship - cross-shell prompt
+
 If you are a person, who does not want to get into theme setup rabbit hole, then Starship is for you. It is simple to install and setup. Starship also provide presents.
+
 #### Installation & Configuration
+
 1. [[Homebrew]] install
+
 ```shell
 brew install starship
 ```
+
 2. Open zsh config and add below line at the very end of `.zsh` file.
+
 ```
 eval "$(starship init zsh)"
 ```
+
 3. [Presets | Starship](https://starship.rs/presets/). One simple step to install preset.
+
 ```shell
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 ```
- 4. If you still want more customisation, then simply modify `~/.config/starship.toml`. 
+
+4.  If you still want more customisation, then simply modify `~/.config/starship.toml`.
 
 ## ➕ Useful Plugins
 
@@ -85,11 +96,13 @@ omz reload
 ```
 
 Here are some cool plugin I use the most
+
 - git
 - dotenv
 - zsh-autosuggestions
 - f-sy-h
-More plugin can be find [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+  More plugin can be find [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+
 ## 📝Cheat Sheet
 
 Quick reference:
