@@ -10,10 +10,7 @@ head:
 hero:
   name: "SpellBook"
   text: "Explore. \nCapture. \nElevate  🚀"
-  tagline: "Your Developer Handbook for Modern Web Development - JavaScript, TypeScript, React, Vue.js, and More"
-  image:
-    src: /spellbook.png
-    alt: SpellBook - Modern Web Development Handbook and Developer Guide
+  tagline: "My Secret Scroll When Google’s Sorcery Falls Flat!"
   actions:
     - theme: brand
       text: "Who Am I ?"
