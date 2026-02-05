@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Jay Pancholi <jaypancholi94@gmail.com>",
   "license": "MIT",
+  "packageManager": "npm@10.2.4",
   "dependencies": {
     "lucide-react": "^0.439.0",
     "vitepress": "^1.0.0-rc.10"
