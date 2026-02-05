@@ -1,6 +1,5 @@
 {
   "folder": "Exco Partners/Updates/Notes",
   "format": "YYYY-MM-DD - dddd",
-  "autorun": true,
   "template": "Templates/Daily Notes"
 }
