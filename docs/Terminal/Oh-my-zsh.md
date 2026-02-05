@@ -68,7 +68,7 @@ code ~/zshrc
 
 3. Add plugin snippet
 
-```zshrc
+```bash
 plugins=(
   ...other plugin...
   zsh-autosuggestions

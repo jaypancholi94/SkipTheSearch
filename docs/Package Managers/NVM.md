@@ -63,10 +63,10 @@ nvm run 14.17.0 my-script.js
 When working on multiple projects, it’s often helpful to specify which Node.js version each project uses. This is where the `.nvmrc` file comes in handy.
 1. **Create a `.nvmrc` File**: In the root directory of your project, create a file named `.nvmrc`:
 :::code-group
-```Specific Node Version
+```bash[Specific Node Version]
 echo "14.17.0" > .nvmrc
 ```
-```System Node Version
+```bash[System Node Version]
 node -v > .nvmrc
 ```
 :::

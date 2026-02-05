@@ -1,5 +1,11 @@
 ---
 layout: home
+title: SpellBook - Developer Handbook for Modern Web Engineering
+description: Comprehensive developer handbook featuring practical guides, best practices, and real-world patterns across JavaScript, TypeScript, React, Vue.js, Git, AWS, and the full web development stack. Your personal knowledge base for mastering web development.
+head:
+  - - meta
+    - name: keywords
+      content: developer handbook, web development, JavaScript guides, TypeScript tutorials, React best practices, Vue.js patterns, Git workflows, AWS documentation, programming guides, frontend development, backend development, full-stack development
 
 hero:
   name: "SpellBook"
