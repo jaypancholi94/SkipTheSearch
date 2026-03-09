@@ -1,9 +1,9 @@
-import { defineConfig } from "vitepress";
-import { generateSidebar } from "vitepress-sidebar";
-import wikilinks from "markdown-it-wikilinks";
-import { withMermaid } from "vitepress-plugin-mermaid";
+import { defineConfig } from "vitepress"
+import { generateSidebar } from "vitepress-sidebar"
+import wikilinks from "markdown-it-wikilinks"
+import { withMermaid } from "vitepress-plugin-mermaid"
 
-const siteUrl = "https://spellbook.muggleborn.dev";
+const siteUrl = "https://spellbook.muggleborn.dev"
 
 export default withMermaid({
   ...defineConfig({
@@ -15,10 +15,7 @@ export default withMermaid({
     cleanUrls: true,
     lastUpdated: true,
     head: [
-      [
-        "meta",
-        { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      ],
+      ["meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }],
       ["meta", { name: "theme-color", content: "#5fa8b5" }],
       ["meta", { name: "author", content: "Jay Pancholi" }],
       [
@@ -110,8 +107,7 @@ export default withMermaid({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "SpellBook",
-          description:
-            "Comprehensive developer handbook for modern web engineering",
+          description: "Comprehensive developer handbook for modern web engineering",
           url: siteUrl,
           author: {
             "@type": "Person",
@@ -133,16 +129,13 @@ export default withMermaid({
     transformHead: ({ pageData }) => {
       const canonicalUrl = `${siteUrl}/${pageData.relativePath}`
         .replace(/\.md$/, "")
-        .replace(/index$/, "");
+        .replace(/index$/, "")
 
-      const head: any[] = [["link", { rel: "canonical", href: canonicalUrl }]];
+      const head: any[] = [["link", { rel: "canonical", href: canonicalUrl }]]
 
       // Add page-specific Open Graph tags
       if (pageData.frontmatter.title) {
-        head.push([
-          "meta",
-          { property: "og:title", content: pageData.frontmatter.title },
-        ]);
+        head.push(["meta", { property: "og:title", content: pageData.frontmatter.title }])
       }
       if (pageData.frontmatter.description) {
         head.push([
@@ -151,15 +144,12 @@ export default withMermaid({
             property: "og:description",
             content: pageData.frontmatter.description,
           },
-        ]);
-        head.push([
-          "meta",
-          { name: "description", content: pageData.frontmatter.description },
-        ]);
+        ])
+        head.push(["meta", { name: "description", content: pageData.frontmatter.description }])
       }
-      head.push(["meta", { property: "og:url", content: canonicalUrl }]);
+      head.push(["meta", { property: "og:url", content: canonicalUrl }])
 
-      return head;
+      return head
     },
     themeConfig: {
       logo: "/spellbook.png",
@@ -200,7 +190,7 @@ export default withMermaid({
         { icon: "facebook", link: "https://www.facebook.com/Jay.D.Pancholi/" },
       ],
     },
-    ignoreDeadLinks: "localhostLinks",
+    ignoreDeadLinks: true,
     markdown: {
       config: (md) => {
         md.use(
@@ -208,34 +198,34 @@ export default withMermaid({
             baseURL: "/",
             postProcessPageName: (label: string) => label.trim().replace(/\s/g, "%20"),
           }),
-        );
+        )
       },
     },
     sitemap: {
       hostname: siteUrl,
       transformItems: (items) =>
         items.map((item) => {
-          let priority = 0.6;
-          let changefreq: "weekly" | "monthly" = "monthly";
+          let priority = 0.6
+          let changefreq: "weekly" | "monthly" = "monthly"
 
           if (item.url === "" || item.url === "/") {
-            priority = 1.0;
-            changefreq = "weekly";
+            priority = 1.0
+            changefreq = "weekly"
           } else if (["/About", "/Who%20Am%20I"].some((p) => item.url.includes(p))) {
-            priority = 0.8;
+            priority = 0.8
           } else if (
             ["/React", "/TypeScript", "/Git/Git", "/Lambda", "/GraphQL", "/ESLint"].some((p) =>
-              item.url.includes(p)
+              item.url.includes(p),
             )
           ) {
-            priority = 0.8;
+            priority = 0.8
           }
 
-          return { ...item, changefreq, priority };
+          return { ...item, changefreq, priority }
         }),
     },
   }),
   mermaidPlugin: {
     class: "mermaid my-class",
   },
-});
+})
