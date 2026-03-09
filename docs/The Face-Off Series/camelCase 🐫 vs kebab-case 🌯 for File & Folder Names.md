@@ -64,20 +64,17 @@ Use **`kebab-case`** for files and folders
 
 > It’s simpler, safer, easier to type, and aligns with modern tooling.
 
-
 ## 📌 TL;DR
 
-| Aspect                 | camelCase 🐫     | kebab-case 🌯     | Winner         |
-|------------------------|------------------|-------------------|----------------|
-| Cross-platform safety  | ❌ Risky         | ✅ Safe            | kebab-case     |
-| Readability            | 🤷‍♂️ Okay         | ✅ Clear           | kebab-case     |
-| CLI/URL friendliness   | ❌ Clunky        | ✅ Smooth          | kebab-case     |
-| Ecosystem alignment    | ❌ Rare          | ✅ Common          | kebab-case     |
-| Code/file distinction  | 😕 Mixed         | ✅ Obvious         | kebab-case     |
-
+| Aspect                | camelCase 🐫 | kebab-case 🌯 | Winner     |
+| --------------------- | ------------ | ------------- | ---------- |
+| Cross-platform safety | ❌ Risky     | ✅ Safe       | kebab-case |
+| Readability           | 🤷‍♂️ Okay      | ✅ Clear      | kebab-case |
+| CLI/URL friendliness  | ❌ Clunky    | ✅ Smooth     | kebab-case |
+| Ecosystem alignment   | ❌ Rare      | ✅ Common     | kebab-case |
+| Code/file distinction | 😕 Mixed     | ✅ Obvious    | kebab-case |
 
 ## 📚 Further Reading
 
 - [Naming Cheatsheet by @kettanaito](https://github.com/kettanaito/naming-cheatsheet)
 - [npm Package Naming Rules](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#name)
-

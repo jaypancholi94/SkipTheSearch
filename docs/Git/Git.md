@@ -107,7 +107,7 @@ Isolating work in branches, changing context, and integrating changes
 git branch
 ```
 
-_List your branches. a _ will appear next to the currently active branch\*
+_List your branches. a_ will appear next to the currently active branch\*
 
 ```zsh
 git branch [branch-name]

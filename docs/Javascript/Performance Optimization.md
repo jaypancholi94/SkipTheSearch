@@ -1,11 +1,17 @@
 # Performance Optimization
+
 Memoization in React is a technique used to **optimize performance** by caching values or functions so that React can skip unnecessary re-renders. Let’s break down the three primary tools for memoization in React: `React.memo`, `useMemo`, and `useCallback`.
 
 ## `React.memo`
+
 `React.memo` is a [higher-order component (HOC)](Terminology.md#higher-order-component-hoc) that memoizes a **functional component**. It prevents the component from re-rendering unless its **props** change. It’s similar to `PureComponent` for class components.
-### How it works:
+
+### How it works
+
 - React.memo checks if the props of a component have changed. If not, it skips rendering the component, thus optimizing performance.
-### Example:
+
+### Example
+
 ```JavaScript
 import React from 'react';
 
@@ -32,12 +38,15 @@ export default App;
 ```
 
 ## `useMemo`
+
 `useMemo` is used to **memoize values**. It prevents expensive computations from being recalculated on every render unless the dependencies change.
 
-### How it works:
+### How it works
 
 - `useMemo` only recalculates the value if one of the dependencies has changed. It is often used for **expensive calculations** or **derived state**.
-### Example:
+
+### Example
+
 ```JavaScript
 import React from 'react';
 
@@ -67,12 +76,15 @@ export default App;
 ```
 
 ## `useCallback`
+
 `useCallback` is used to **memoize functions**. It prevents the function from being recreated on every render unless its dependencies change. This is useful when passing **callback functions** to child components to avoid unnecessary re-renders.
 
-### How it works:
+### How it works
 
 - `useCallback` returns a **memoized version** of a function that will only change if its dependencies change.
-### Example:
+
+### Example
+
 ```JavaScript
 import React from 'react';
 
@@ -105,11 +117,13 @@ export default App;
 
 ```
 
-## Summary:
+## Summary
+
 - `React.memo` prevents a component from re-rendering unless its props change.
 - `useMemo` memoizes the result of expensive calculations to avoid recalculating them unnecessarily.
 - `useCallback` memoizes callback functions to prevent them from being recreated on every render.
-## When to Use These Tools:
+
+## When to Use These Tools
 
 - Use `React.memo` when you want to prevent a component from re-rendering if its **props** haven’t changed.
 - Use `useMemo` when you have an **expensive calculation** that should only be recalculated when its dependencies change.

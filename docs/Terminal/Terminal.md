@@ -1,4 +1,5 @@
 # Terminal: The Dev's Not-So-Secret Love Affair 😂
+
 Ah, the terminal - that quirky, old-school friend of developers! 🤓 It's like a time machine to the '80s, but trust me, it's not just for nostalgia. This bad boy handles coding, project juggling, and even unleashes our inner script-magicians. 🧙‍♂️ It's like the ultimate multitool, and who doesn't love feeling like a command-line superhero? 🦸‍♂️ Stick around, and we'll unveil all the secrets of this retro-cool, text-based wizardry! 😎🚀
 
 ## 💻 List of terminals
@@ -28,9 +29,10 @@ If you prefer minimalist design you should configure iTerm2 as I did
 
 1. Open iTerms2 preferences. `cmd + ,`
 2. Go To `Appearance`
-	- Set Theme to `Compact`
-	- Tab bar location to `Top`
-	- Status bar location to `Bottom`
+
+- Set Theme to `Compact`
+- Tab bar location to `Top`
+- Status bar location to `Bottom`
 
 3. Go to `Profiles` and create new profile clicking `+`
 

@@ -29,8 +29,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-2. Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
-3. Run `omz reload` in terminal.
+1. Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
+2. Run `omz reload` in terminal.
 
 #### Theme `Powerlevel10K` Configuration
 
@@ -49,19 +49,19 @@ If you are a person, who does not want to get into theme setup rabbit hole, then
 brew install starship
 ```
 
-2. Open zsh config and add below line at the very end of `.zsh` file.
+1. Open zsh config and add below line at the very end of `.zsh` file.
 
 ```
 eval "$(starship init zsh)"
 ```
 
-3. [Presets | Starship](https://starship.rs/presets/). One simple step to install preset.
+1. [Presets | Starship](https://starship.rs/presets/). One simple step to install preset.
 
 ```shell
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 ```
 
-4.  If you still want more customisation, then simply modify `~/.config/starship.toml`.
+1. If you still want more customisation, then simply modify `~/.config/starship.toml`.
 
 ## ➕ Useful Plugins
 
@@ -71,13 +71,13 @@ starship preset nerd-font-symbols -o ~/.config/starship.toml
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-2. Once cloned, add it to `.zshrc` file
+1. Once cloned, add it to `.zshrc` file
 
 ```shell
 code ~/zshrc
 ```
 
-3. Add plugin snippet
+1. Add plugin snippet
 
 ```bash
 plugins=(
@@ -88,8 +88,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 ```
 
-4. Save `.zshrc` and exit the editor
-5. In order to activate the changes we need to reload the `.zshrc`
+1. Save `.zshrc` and exit the editor
+2. In order to activate the changes we need to reload the `.zshrc`
 
 ```shell
 omz reload

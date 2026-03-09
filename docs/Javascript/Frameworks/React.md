@@ -70,7 +70,7 @@ componentWillUnmount() {
 }
 ```
 
-## 🎉 Hooks: The Functional Way of Life!
+## 🎉 Hooks: The Functional Way of Life
 
 By now, you might be thinking, “But I use functional components!” 🤔 No worries, React’s got your back with **Hooks**. Let’s talk about their role in the lifecycle:
 

@@ -25,10 +25,10 @@ description: "Learn GraphQL API development with queries, mutations, schemas, an
 
 ```GraphQL
 query {
-	user(id: '1') {
-		name
-		email
-	}
+ user(id: '1') {
+  name
+  email
+ }
 }
 ```
 
@@ -42,7 +42,7 @@ Using Apollo Server 🚀
 npm install apollo-server graphql
 ```
 
-2. **Create a basic server:**
+1. **Create a basic server:**
 
 ```JavaScript
 const { ApolloServer, gql } = require('apollo-server');
@@ -90,7 +90,7 @@ type Subscription {
 npm install @apollo/client graphql
 ```
 
-2. **Setup Apollo client**
+1. **Setup Apollo client**
 
 ```JavaScript
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
@@ -125,7 +125,7 @@ Using TypeScript with GraphQL ensures type safety. Here’s a basic setup:
 npm install @types/graphql graphql-codegen
 ```
 
-2. **Generate types:**
+1. **Generate types:**
 
 ```bash
 graphql-codegen --config codegen.yml

@@ -8,7 +8,7 @@
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
-2. **Reload Shell**: Close and reopen your terminal and run
+1. **Reload Shell**: Close and reopen your terminal and run
    :::code-group
 
 ```bash[bash]
@@ -109,7 +109,7 @@ nvm use
 
 This command reads the `.nvmrc` file and switches to the specified version.
 
-3. **Set Up Automatic Version Switching**: For a smoother workflow, you can use a tool like `nvm-auto` or `nvm-use` to automatically switch Node.js versions when you navigate into your project directory. Install `nvm-auto` globally:
+1. **Set Up Automatic Version Switching**: For a smoother workflow, you can use a tool like `nvm-auto` or `nvm-use` to automatically switch Node.js versions when you navigate into your project directory. Install `nvm-auto` globally:
 
 ```bash
 npm install -g nvm-auto

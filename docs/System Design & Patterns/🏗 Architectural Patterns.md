@@ -399,23 +399,22 @@ Use the table below as a quick reference.
 | Extreme Throughput / Low Latency Systems | Space-Based Architecture            | Avoids database bottlenecks using in-memory grids        |
 
 ### ⚡ Quick Mental Model
+
 If you're unsure which architecture to choose, use this simple rule of thumb:
 
 **Start simple, evolve when necessary.**
 
 Typical evolution of many real systems:
 
-
 ```
-Monolith  
-   ↓  
-Layered Architecture  
-   ↓  
-Microservices  
-   ↓  
-Event-Driven Systems  
+Monolith
+   ↓
+Layered Architecture
+   ↓
+Microservices
+   ↓
+Event-Driven Systems
 ```
-
 
 Most companies **do not start with microservices**.  
 They grow into them as the system and team scale.

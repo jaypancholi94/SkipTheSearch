@@ -1,0 +1,30 @@
+{
+  "config": {
+    // Defaults on, then override what doesn't fit a docs project
+    "default": true,
+
+    // MD013 — line length: off (long lines are fine in docs)
+    "MD013": false,
+
+    // MD033 — inline HTML: off (VitePress components / custom HTML blocks)
+    "MD033": false,
+
+    // MD041 — first line must be top-level heading: off (frontmatter pages)
+    "MD041": false,
+
+    // MD024 — no duplicate headings: allow duplicates in different sections
+    "MD024": { "siblings_only": true },
+
+    // MD029 — ordered list item prefix: use "ordered" style (1. 2. 3.)
+    "MD029": { "style": "ordered" },
+
+    // MD046 — code block style: fenced (```) only
+    "MD046": { "style": "fenced" },
+
+    // MD048 — code fence style: backtick only
+    "MD048": { "style": "backtick" },
+  },
+
+  // Ignore generated / non-authored files
+  "ignores": ["node_modules/**", "docs/.vitepress/dist/**", "docs/.vitepress/cache/**"],
+}

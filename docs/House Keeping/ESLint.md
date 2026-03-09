@@ -2,6 +2,7 @@
 title: "ESLint Setup Guide - JavaScript Linting Best Practices | SpellBook"
 description: "Learn ESLint configuration for JavaScript and TypeScript. Set up linting rules, fix code quality issues, and maintain clean, bug-free code."
 ---
+
 # ESLint: Keeping Code Clean and Bug-Free! 🧹💻
 
 If you’ve ever run into frustrating code issues or puzzling syntax errors, ESLint is your new best friend! It’s a powerful tool that doesn’t just help enforce coding styles but also catches potential bugs before they creep into production./
@@ -15,7 +16,7 @@ ESLint is a linting tool for JavaScript and TypeScript code. In simple terms, li
 To get started, you’ll need Node.js and npm installed. Then, follow these steps:
 
 1. **Install ESLint as a Dev Dependency**:
-::: code-group
+   ::: code-group
 
 ```zsh[npm]
 npm install eslint --save-dev
@@ -33,8 +34,7 @@ yarn add -D eslint
 bun add -D eslint
 ```
 
-:::
-2. **Initialize ESLint**: Run the following command to create a `.eslintrc` configuration file:
+::: 2. **Initialize ESLint**: Run the following command to create a `.eslintrc` configuration file:
 ::: code-group
 
 ```zsh[npm]
@@ -53,15 +53,14 @@ yarn dlx eslint --init
 bun x eslint --init
 ```
 
-:::
-3. **Configure Your Style**: You’ll be prompted with questions like:
- - What type of modules do you use? (CommonJS or ES6)
- - Do you use TypeScript?
- - Are you using a framework like React?
- - Do you prefer tabs or spaces?
- 
- Based on your responses, ESLint will create a basic configuration that fits your coding style and project needs.
-4. **Add Scripts**: Add a script to your `package.json` for quick linting:
+::: 3. **Configure Your Style**: You’ll be prompted with questions like:
+
+- What type of modules do you use? (CommonJS or ES6)
+- Do you use TypeScript?
+- Are you using a framework like React?
+- Do you prefer tabs or spaces?
+
+Based on your responses, ESLint will create a basic configuration that fits your coding style and project needs. 4. **Add Scripts**: Add a script to your `package.json` for quick linting:
 
 ```json
 "scripts": {
@@ -69,8 +68,8 @@ bun x eslint --init
 }
 ```
 
-5. **Run ESLint**: Now, simply run:
-::: code-group
+1. **Run ESLint**: Now, simply run:
+   ::: code-group
 
 ```zsh[npm]
 npm run lint
@@ -89,7 +88,7 @@ bun lint
 ```
 
 :::
- And watch as ESLint checks your code for issues!
+And watch as ESLint checks your code for issues!
 
 ## 🔧 Understanding `.eslintrc`
 
@@ -99,8 +98,8 @@ The `.eslintrc` file is where all the magic happens. This file can be in various
 
 ```json
 "extends": [
- "airbnb", 
- "eslint:recommended", 
+ "airbnb",
+ "eslint:recommended",
  "plugin:@typescript-eslint/recommended"
 ]
 ```
@@ -125,7 +124,7 @@ The `.eslintrc` file is where all the magic happens. This file can be in various
 ESLint helps with code quality, while [Prettier](/House%20Keeping/Prettier) keeps your code pretty. They can work together! Here’s how:
 
 1. **Install Prettier and ESLint Plugins:**
-::: code-group
+   ::: code-group
 
 ```zsh[npm]
 npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
@@ -143,14 +142,13 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
 bun add -D prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-:::
-2. **Update `.eslintrc`:** Configure ESLint to use Prettier's rules:
+::: 2. **Update `.eslintrc`:** Configure ESLint to use Prettier's rules:
 
 ```json
 "extends": ["plugin:prettier/recommended"]
 ```
 
-3. **Create a `.prettierrc`** file for Prettier-specific settings.
+1. **Create a `.prettierrc`** file for Prettier-specific settings.
 
 Now, ESLint will handle quality, and Prettier will handle formatting, without stepping on each other’s toes.
 
@@ -174,7 +172,7 @@ For those who want even more control:
 ## 🚀 Pro Tips for ESLint Success
 
 1. **Automate Fixes**: Run ESLint with the `--fix` flag to automatically fix problems it can handle:
-::: code-group
+   ::: code-group
 
 ```zsh[npm]
 npmx eslint --fix .
@@ -192,33 +190,34 @@ yarn dlx eslint --fix .
 bunx eslint --fix .
 ```
 
-:::
-2. **Use VS Code Integration**: Install the [ESLint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to get real-time linting feedback. The extension underlines issues in your code and provides quick fixes, making it faster and easier to correct errors as you code.
-3. **Use Vim/Neovim Integration:** For Vim or Neovim users, you can integrate ESLint with the [ALE (Asynchronous Lint Engine)](https://github.com/dense-analysis/ale) or [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) plugin. Here’s a quick setup:
+::: 2. **Use VS Code Integration**: Install the [ESLint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to get real-time linting feedback. The extension underlines issues in your code and provides quick fixes, making it faster and easier to correct errors as you code. 3. **Use Vim/Neovim Integration:** For Vim or Neovim users, you can integrate ESLint with the [ALE (Asynchronous Lint Engine)](https://github.com/dense-analysis/ale) or [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) plugin. Here’s a quick setup:
 
 - **ALE**: ALE will automatically run ESLint when you save or edit files. Just add this to your `.vimrc` or `init.vim`:
-    ```vim
-    let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
- ```
-- **null-ls (Neovim)**: With null-ls and the `nvim-lspconfig` plugin, you can set up ESLint as an LSP server for even more customization:
- ```lua
- require("null-ls").setup({
-   sources = {
-     require("null-ls").builtins.diagnostics.eslint,
-     require("null-ls").builtins.code_actions.eslint,
-     require("null-ls").builtins.formatting.eslint,
-   },
- })
- ```
 
-4. **Customize Error Levels**: ESLint rules can be set to “off,” “warn,” or “error” based on your project’s needs, so tailor it to match your team’s preferences.
+  ```vim
+  let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+  ```
+
+````
+- **null-ls (Neovim)**: With null-ls and the `nvim-lspconfig` plugin, you can set up ESLint as an LSP server for even more customization:
+```lua
+require("null-ls").setup({
+  sources = {
+    require("null-ls").builtins.diagnostics.eslint,
+    require("null-ls").builtins.code_actions.eslint,
+    require("null-ls").builtins.formatting.eslint,
+  },
+})
+````
+
+1. **Customize Error Levels**: ESLint rules can be set to “off,” “warn,” or “error” based on your project’s needs, so tailor it to match your team’s preferences.
 
 ### 🌐 ESLint Beyond JavaScript
 
 Using TypeScript? ESLint can handle it too! With `@typescript-eslint`, you can lint TypeScript projects and enforce the same level of quality checks across your codebase.
 
 1. **Install ESLint for TypeScript**:
-::: code-group
+   ::: code-group
 
 ```zsh[npm]
 npm install @typescript-eslint/eslint-plugin @typescript-eslint/parser --save-dev
@@ -236,8 +235,7 @@ yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 bun add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
-:::
-2. **Update .eslintrc**: In `.eslintrc`, use `@typescript-eslint` as the parser and add its plugin:
+::: 2. **Update .eslintrc**: In `.eslintrc`, use `@typescript-eslint` as the parser and add its plugin:
 
 ```json
 "parser": "@typescript-eslint/parser",

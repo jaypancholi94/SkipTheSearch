@@ -111,7 +111,7 @@ Here’s what’s happening:
 
 Let’s look at a real-world use case: making API requests.
 
-#### With Promises:
+#### With Promises
 
 ```JavaScript
 fetch("https://api.example.com/data")
@@ -124,7 +124,7 @@ fetch("https://api.example.com/data")
   });
 ```
 
-#### With Async/Await:
+#### With Async/Await
 
 ```JavaScript
 const fetchData = async () => {
@@ -156,8 +156,8 @@ const [result1, result2, result3] = await Promise.all([promise1, promise2, promi
 
 ```
 
-2. **Avoid Blocking with Long `await` Chains**: When dealing with tasks that don't depend on each other, execute them in parallel using `Promise.all()` instead of awaiting them one after another.
-3. **Handle Errors Gracefully**: Always use `try/catch` with `async/await` or `.catch()` with promises to handle any unexpected errors and avoid crashes.
+1. **Avoid Blocking with Long `await` Chains**: When dealing with tasks that don't depend on each other, execute them in parallel using `Promise.all()` instead of awaiting them one after another.
+2. **Handle Errors Gracefully**: Always use `try/catch` with `async/await` or `.catch()` with promises to handle any unexpected errors and avoid crashes.
 
 ## 🎁 Wrapping Up
 

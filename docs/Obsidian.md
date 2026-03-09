@@ -1,7 +1,9 @@
 # Obsidian 🔮
+
 Obsidian is a powerful, open-source knowledge management and note-taking application. It uses Markdown for formatting, making it a favorite among users who appreciate a clean and simple way to organize and connect their notes. Obsidian is designed to help you build a personal knowledge base with a high degree of flexibility and customization.
 
 ## 💡Features
+
 - **Markdown Support**: Write and format your notes using [[Markdown]], which keeps your documents clean and easy to manage.
 - **Graph View**: Visualize the connections between your notes with an interactive graph that shows how your ideas are linked.
 - **Linking and Backlinking**: Easily link notes together and see where they are referenced across your knowledge base.

@@ -2,16 +2,16 @@
 
 Writing clean code is an art and comments are part of the brushwork. Used well, they help teammates (and future-you) understand your logic, avoid pitfalls, and extend your code without confusion. Used poorly? They clutter, mislead, or rot faster than your last TODO.
 
-Let’s break down how to write comments that _actually help_.
+Let’s break down how to write comments that *actually help*.
 
 ## 🌟 Why Comments Matter
 
 - 🧐 **Explain intent, not mechanics**  
-    Code shows _what_ it does. Comments should explain _why_.
+   Code shows *what* it does. Comments should explain *why*.
 - 🔍 **Aid future debugging and maintenance**  
-    Today’s clever hack is tomorrow’s “wtf is this” moment.
+   Today’s clever hack is tomorrow’s “wtf is this” moment.
 - 👯 **Improve onboarding and collaboration**  
-    Your teammate shouldn’t need a seer stone to follow your logic.
+   Your teammate shouldn’t need a seer stone to follow your logic.
 
 ## ✏️ Types of Comments
 
@@ -35,7 +35,6 @@ Keep them short and contextual. Avoid narrating the obvious:
 i += 1
 ```
 
-
 ### `/* */` Multi-Line Comments
 
 Use these for:
@@ -55,7 +54,7 @@ Avoid nesting `/* */` inside each other — it breaks parsing in most language
 
 ### 🗞️ Function Comments & JSDoc
 
-When used right, function comments are a _superpower_. JSDoc (or similar formats) adds structure to those comments and enables tooling like IntelliSense, linting, and API docs.
+When used right, function comments are a *superpower*. JSDoc (or similar formats) adds structure to those comments and enables tooling like IntelliSense, linting, and API docs.
 
 Example:
 
@@ -97,7 +96,6 @@ setTimeout(() => enableSubmit(), 2000)
 setTimeout(() => enableSubmit(), 2000)
 ```
 
-
 ### 2. Use Section Headers
 
 In longer files, use comments to visually break logic:
@@ -115,7 +113,6 @@ You can even combine with editor-folding magic in VS Code:
 // ...
 // #endregion
 ```
-
 
 ### 3. Write TODO, FIXME, and NOTE consistently
 
@@ -147,17 +144,17 @@ These tags usually indicate technical debt or shortcuts, so they **must be track
 :::
 
 ::: tip
-I would also recommend using [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) for better visual representation. 
+I would also recommend using [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) for better visual representation.
 :::
 
 ## 🙎 Common Comment Smells
 
 - ❌ **Outdated comments**  
-    Don’t describe code that’s no longer accurate.
+   Don’t describe code that’s no longer accurate.
 - ❌ **Noise over clarity**  
-    Commenting every line is worse than none at all.
+   Commenting every line is worse than none at all.
 - ❌ **Sarcasm or jokes in production**  
-    Fun in the moment, dangerous later.
+   Fun in the moment, dangerous later.
 
 ## ✅ Real-World Use Cases
 
@@ -170,8 +167,7 @@ Here’s how great teams use comments effectively:
 
 ## 🧙🏻 Final Thoughts
 
-
-The goal isn’t to _explain the code_, it’s to _explain the decisions_ behind the code.
+The goal isn’t to *explain the code*, it’s to *explain the decisions* behind the code.
 
 Be kind to your future self and your team. Good comments save hours of Slack threads and guessing games.
 
