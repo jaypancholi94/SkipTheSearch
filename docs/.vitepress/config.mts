@@ -2,25 +2,24 @@ import { defineConfig } from "vitepress";
 import { generateSidebar } from "vitepress-sidebar";
 import wikilinks from "markdown-it-wikilinks";
 import { withMermaid } from "vitepress-plugin-mermaid";
-import { SitemapStream } from "sitemap";
-import { createWriteStream } from "node:fs";
-import { resolve } from "node:path";
 
 const siteUrl = "https://spellbook.muggleborn.dev";
 
 export default withMermaid({
   ...defineConfig({
     title: "SpellBook",
-    titleTemplate: "Explore. Capture. Elevate. 🚀",
+    titleTemplate: ":title | SpellBook",
     description:
       "SpellBook is a comprehensive developer handbook for modern web engineering. Discover practical guides, best practices, and real-world patterns across JavaScript, TypeScript, React, Vue.js, Git, AWS, and more. Your personal knowledge base for mastering web development.",
     lang: "en-US",
+    cleanUrls: true,
+    lastUpdated: true,
     head: [
       [
         "meta",
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
       ],
-      ["meta", { name: "theme-color", content: "#3eaf7c" }],
+      ["meta", { name: "theme-color", content: "#5fa8b5" }],
       ["meta", { name: "author", content: "Jay Pancholi" }],
       [
         "meta",
@@ -50,7 +49,7 @@ export default withMermaid({
         },
       ],
       ["meta", { property: "og:url", content: siteUrl }],
-      ["meta", { property: "og:image", content: `${siteUrl}/og-image.png` }],
+      ["meta", { property: "og:image", content: `${siteUrl}/spellbook.png` }],
       ["meta", { property: "og:image:width", content: "1200" }],
       ["meta", { property: "og:image:height", content: "630" }],
 
@@ -71,10 +70,10 @@ export default withMermaid({
             "Comprehensive developer handbook featuring practical guides, best practices, and real-world patterns across the full web development stack.",
         },
       ],
-      ["meta", { name: "twitter:image", content: `${siteUrl}/og-image.png` }],
+      ["meta", { name: "twitter:image", content: `${siteUrl}/spellbook.png` }],
       ["meta", { name: "twitter:creator", content: "@jaypancholi94" }],
 
-      // Additional SEO
+      // Google Analytics
       [
         "script",
         {
@@ -91,6 +90,17 @@ export default withMermaid({
       gtag('config', 'G-KEH7XC8FNF');`,
       ],
       ["link", { rel: "icon", href: "/spellbook.png" }],
+
+      // Google Fonts — Manrope (body), Bricolage Grotesque (headings), JetBrains Mono (code)
+      ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+      ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+      [
+        "link",
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap",
+        },
+      ],
 
       // Structured Data (JSON-LD)
       [
@@ -166,10 +176,20 @@ export default withMermaid({
       sidebar: generateSidebar({
         documentRootPath: "docs/",
         sortMenusByName: true,
+        useFolderLinkFromIndexFile: true,
+        // useFolderTitleFromIndexFile: true,
+        useTitleFromFileHeading: true,
       }),
       outline: [2, 3],
       search: {
         provider: "local",
+      },
+      lastUpdated: {
+        text: "Last updated",
+        formatOptions: {
+          dateStyle: "medium",
+          timeStyle: "short",
+        },
       },
       externalLinkIcon: true,
       socialLinks: [
@@ -180,90 +200,42 @@ export default withMermaid({
         { icon: "facebook", link: "https://www.facebook.com/Jay.D.Pancholi/" },
       ],
     },
-    ignoreDeadLinks: true,
+    ignoreDeadLinks: "localhostLinks",
     markdown: {
       config: (md) => {
         md.use(
           wikilinks({
             baseURL: "/",
-            postProcessPageName: (label) => label.trim().replace(/\s/g, "%20"),
+            postProcessPageName: (label: string) => label.trim().replace(/\s/g, "%20"),
           }),
         );
       },
     },
-    buildEnd: async ({ outDir }) => {
-      const sitemap = new SitemapStream({ hostname: siteUrl });
-      const writeStream = createWriteStream(resolve(outDir, "sitemap.xml"));
-      sitemap.pipe(writeStream);
+    sitemap: {
+      hostname: siteUrl,
+      transformItems: (items) =>
+        items.map((item) => {
+          let priority = 0.6;
+          let changefreq: "weekly" | "monthly" = "monthly";
 
-      const { readdirSync, statSync } = await import("node:fs");
-      const { join } = await import("node:path");
-
-      // Function to recursively get all .html files from dist
-      const getAllPages = (dir: string, baseDir: string = dir): string[] => {
-        const files: string[] = [];
-        const items = readdirSync(dir);
-
-        items.forEach((item) => {
-          const fullPath = join(dir, item);
-          const stat = statSync(fullPath);
-
-          if (stat.isDirectory()) {
-            files.push(...getAllPages(fullPath, baseDir));
-          } else if (item.endsWith(".html")) {
-            // Convert file path to URL path
-            const relativePath = fullPath
-              .replace(baseDir, "")
-              .replace(/\\/g, "/")
-              .replace(/\.html$/, "")
-              .replace(/\/index$/, "/");
-            files.push(relativePath || "/");
+          if (item.url === "" || item.url === "/") {
+            priority = 1.0;
+            changefreq = "weekly";
+          } else if (["/About", "/Who%20Am%20I"].some((p) => item.url.includes(p))) {
+            priority = 0.8;
+          } else if (
+            ["/React", "/TypeScript", "/Git/Git", "/Lambda", "/GraphQL", "/ESLint"].some((p) =>
+              item.url.includes(p)
+            )
+          ) {
+            priority = 0.8;
           }
-        });
 
-        return files;
-      };
-
-      // Get all pages from dist directory
-      const allPages = getAllPages(outDir);
-
-      // Define priority and changefreq for different page types
-      allPages.forEach((url) => {
-        let priority = 0.6; // Default priority
-        let changefreq = "monthly";
-
-        // Homepage gets highest priority
-        if (url === "/") {
-          priority = 1.0;
-          changefreq = "weekly";
-        }
-        // Important pages
-        else if (["/About", "/Who%20Am%20I"].includes(url)) {
-          priority = 0.8;
-          changefreq = "monthly";
-        }
-        // Category/framework pages
-        else if (
-          url.includes("/React") ||
-          url.includes("/TypeScript") ||
-          url.includes("/Git/Git") ||
-          url.includes("/Lambda") ||
-          url.includes("/GraphQL") ||
-          url.includes("/ESLint")
-        ) {
-          priority = 0.8;
-          changefreq = "monthly";
-        }
-
-        sitemap.write({ url, changefreq, priority });
-      });
-
-      sitemap.end();
-
-      await new Promise((resolve) => writeStream.on("finish", resolve));
+          return { ...item, changefreq, priority };
+        }),
     },
   }),
   mermaidPlugin: {
-    class: "mermaid my-class", // set additional css classes for parent container
+    class: "mermaid my-class",
   },
 });

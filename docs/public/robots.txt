@@ -7,13 +7,7 @@ Allow: /
 # Sitemaps
 Sitemap: https://spellbook.muggleborn.dev/sitemap.xml
 
-# Crawl-delay for polite crawlers (optional)
-Crawl-delay: 1
-
-# Disallow common non-indexable paths (if any)
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*?*
 
 # Allow major search engines
 User-agent: Googlebot
